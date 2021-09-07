@@ -41,7 +41,7 @@
             
             <!-- container for how to use app -->
             <div class="container w-3/4 px-4 mx-auto">
-              <div class="text-center bg-gray-900 rounded-lg max-w-4xl mx-auto">
+              <div class="mt-7 text-center bg-gray-900 rounded-lg max-w-4xl mx-auto">
                 <h1 class="text-green-300 p-3 md:text-4xl mb-2"><b>Welcome to Stream This!</b></h1>
                 <p class="text-green-200 text-lg p-3 mb-8">We make it easy for you to narrow down a movie or tv show on any streaming service.
                     <br><b class="text-2xl text-indigo-400">1.</b> Select the streaming service you want to want to use.<br><b class="text-2xl text-indigo-400">2.</b> Select movie or tv show.<br>
@@ -56,14 +56,68 @@
 
             <!-- container for drop down boxes -->
             <div class="container mx-auto">
-                <div class="input-group mb-12">
-                    <div class="bg-white w-auto flex items-center rounded-lg">
-                        <input class="round-xl w-full py-4 px-6 text-gray-700 leading-tight " id="movie-search" type="text" placeholder="Enter movie/tv show name...">
-
-                        <div class="p-4">
-                            <button class="bg-blue-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center">&#128269</button>
-                        </div>
+                <div class="flex flex-col p-4 mt-16 mb-4 md:flex-row ">
+                    <div class="flex-1 m-1 p-4 md:flex-col" id="streaming-service">
+                        <select class="w-full p-4 font-semibold rounded-lg" name="streaming-service" id="str-ser-pick">
+                            <option value="">Pick Your Streaming Service...</option>
+                            <option id="netflix" value="netflix">Netflix</option>
+                            <option id="amazon-prime" value="amazon-prime">Amazon Prime</option>
+                            <option id="disney-plus" value="disney-plus">Disney+</option>
+                            <option id="hbo-max" value="hbo-max">HBO Max</option>
+                            <option id="peacock" value="peacock">Peacock</option>
+                            <option id="hulu" value="hulu">Hulu</option>
+                            <option id="apple-tv" value="apple-tv">Apple TV</option>
+                        </select>
                     </div>
+
+                    <div class="flex-1 m-1 p-4 md:flex-col" id="tv-movie">
+                        <select class="w-full p-4 font-semibold rounded-lg" name="tv-movie-choice" id="tv-movie-pick">
+                            <option value="">Pick Movie or TV Show...</option>
+                            <option id="movie" value="movie">Movie</option>
+                            <option id="tv-show" value="tv-show">TV Show</option>
+                        </select>
+                    </div>
+
+                    <div class="flex-1 m-1 p-4 md:flex-col" id="genres">
+                        <select class="w-full p-4 font-semibold rounded-lg" name="genre" id="genre-pick">
+                            <option value="">Pick Your Genre...</option>
+                            <option id="action" value="action">Action</option>
+                            <option id="adventure" value="adventure">Adventure</option>
+                            <option id="animation" value="animation">Animation</option>
+                            <option id="biography" value="biography">Biography</option>
+                            <option id="comedy" value="comedy">Comedy</option>
+                            <option id="crime" value="crime">Crime</option>
+                            <option id="documentary" value="documentary">Documentary</option>
+                            <option id="drama" value="drama">Drama</option>
+                            <option id="family" value="family">Family</option>
+                            <option id="fantasy" value="fantasy">Fantasy</option>
+                            <option id="film-noir" value="film-noir">Film-Noir</option>
+                            <option id="game-show" value="game-show">Game-Show</option>
+                            <option id="history" value="history">History</option>
+                            <option id="horror" value="horror">Horror</option>
+                            <option id="music" value="music">Music</option>
+                            <option id="musical" value="musical">Musical</option>
+                            <option id="mystery" value="mystery">Mystery</option>
+                            <option id="news" value="news">News</option>
+                            <option id="reality-tv" value="reality-tv">Reality-TV</option>
+                            <option id="romance" value="romance">Romance</option>
+                            <option id="sci-fi" value="sci-fi">Sci-Fi</option>
+                            <option id="short" value="short">Short</option>
+                            <option id="sport" value="sport">Sport</option>
+                            <option id="talk-show" value="talk-show">Talk-Show</option>
+                            <option id="thriller" value="thriller">Thriller</option>
+                            <option id="war" value="war">War</option>
+                            <option id="western" value="western">Western</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mx-auto">
+                <div class="m-1 p-4 md:flex-col">
+                    <button class="flex-1 w-1/4 bg-indigo-600 hover:bg-indigo-400 text-white text-xl font-extrabold py-2 px-4 rounded-lg">
+                        Search
+                    </button>
                 </div>
             </div>
 
