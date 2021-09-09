@@ -27,4 +27,5 @@ $(document).ready(function() {
    getAPIFunction(streamingService);
    getAPIFunction(tvOrMovie);
    getAPIFunction(genrePick);
+   */
 })
