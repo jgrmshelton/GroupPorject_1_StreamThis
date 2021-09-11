@@ -58,13 +58,7 @@ $("#search-button").on("click", function (event) {
         newDiv.append(year);
         newDiv.append(about);
         currentDiv.append(newDiv);
-        //var movieTvContent = document.textContent(movieTvValues); // add the value inside the array
-    
-        //newDiv.appendChild(movieTvContent);
-    
-        //var currentDiv = document.getElementById("search-results");
-        //document.body.append(currentDiv, newDiv);
-    
+        
       }
     }
 });
