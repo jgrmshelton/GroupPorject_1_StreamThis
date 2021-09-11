@@ -46,9 +46,17 @@ $("#search-button").on("click", function (event) {
         var newDiv = document.createElement("div"); // creates a new div tag for each of values
         newDiv.setAttribute("id", `Div${i}`);
         var title = document.createElement("h2");
-        debugger;
         title.textContent = movie.title;
+
+        var year = document.createElement("h3");
+        year.textContent = movie.year;
+
+        var about = document.createElement("p");
+        about.textContent = movie.overview;
+        
         newDiv.append(title);
+        newDiv.append(year);
+        newDiv.append(about);
         currentDiv.append(newDiv);
         //var movieTvContent = document.textContent(movieTvValues); // add the value inside the array
     
