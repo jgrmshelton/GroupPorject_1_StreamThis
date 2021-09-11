@@ -32,89 +32,37 @@ $("#search-button").on("click", function (event) {
     })
     .then(function (data) {
       console.log(data);
+      movieArrayDivs(data);
     });
-});
-// clear drop down picks after search button is clicked
-// $("str-ser-pick").val("");
-// $("tv-movie-pick").val("");
-// $("genre-pick").val("");
 
-/*
-   getAPIFunction(streamingService);
-   getAPIFunction(tvOrMovie);
-   getAPIFunction(genrePick);
-   */
-
-// streamingAvailability();
-// function streamingAvailability() {
-//   fetch(
-//     "https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=netflix&type=movie&genre=18&page=1&language=en",
-//     {
-//       method: "GET",
-//       headers: {
-//         "x-rapidapi-host": "streaming-availability.p.rapidapi.com",
-//         "x-rapidapi-key": "9d43d4c7e0mshf7e0dc5ea3d9f07p1853d5jsn9854726a74ae",
-//       },
-//     }
-//   )
-//     .then((response) => {
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       console.log(data);
-//     });
-// }
-
-/*
+    function movieArrayDivs(data) {
       
-
-
-      
-
-      var movie1 = $("<div>", {id: "movie1-container" });
-      var movie2 = $("<div>", {id: "movie2-container" });
-      var movie3 = $("<div>", {id: "movie3-container" });
-      var movie4 = $("<div>", {id: "movie4-container" });
-      var movie5 = $("<div>", {id: "movie5-container" });
-      var movie6 = $("<div>", {id: "movie6-container" });
-      var movie7 = $("<div>", {id: "movie7-container" });
-      var movie8 = $("<div>", {id: "movie8-container" });
-
-      $("#search-results").append{
-        movie1,
-        movie2,
-        movie3,
-        movie4,
-        movie5,
-        movie6,
-        movie7,
-        movie8,
-      };
-
+    
+      for(var i = 0; i <= data.results.length - 1; i++) {
+        //movieTvArray.toString();
+        var currentDiv = document.getElementById("search-results");
+        var movie = data.results[i];
+        var movieTvValues = movie;
+        var newDiv = document.createElement("div"); // creates a new div tag for each of values
+        newDiv.setAttribute("id", `Div${i}`);
+        var title = document.createElement("h2");
+        debugger;
+        title.textContent = movie.title;
+        newDiv.append(title);
+        currentDiv.append(newDiv);
+        //var movieTvContent = document.textContent(movieTvValues); // add the value inside the array
+    
+        //newDiv.appendChild(movieTvContent);
+    
+        //var currentDiv = document.getElementById("search-results");
+        //document.body.append(currentDiv, newDiv);
+    
+      }
     }
-  })
-}
-*/
+});
 
-function movieArrayDivs() {
-  var movieTvArray = newMovieTvArray.length;
 
-  for(var i = 0; i < movieTvArray; i++) {
-    newMovieTvArray.toString();
-    var movieTvValues = newMovieTvArray[i];
 
-    var newDiv = document.createElement("div"); // creates a new div tag for each of values
-    newDiv.setAttribute("id", `Div${i}`);
-
-    var movieTvContent = document.createTextNode(movieTvValues); // add the value inside the array
-
-    newDiv.appendChild(movieTvContent);
-
-    var currentDiv = document.getElementById("#search-results");
-    document.body.insertBefore(newDiv, currentDiv);
-
-  }
-}
 
 
 /*
