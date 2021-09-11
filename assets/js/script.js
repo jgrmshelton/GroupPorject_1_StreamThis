@@ -29,3 +29,59 @@ $(document).ready(function() {
    getAPIFunction(genrePick);
    */
 })
+
+/*
+function streamingAvailability() {
+  $.ajax ({
+    type: "GET",
+    url: "aksdalj.com + "  adsfad
+    dataType: "json"
+    success: function (data) {
+      if(varName.idexOf(streamingAvailability) === ?) {
+        searchHistory.push(streamingAvailability);
+        window.localStroage.setItem("searchHistory", JSON.stringigy(searchHistory))
+        listSearch(searchHistory);
+      }
+
+      ?
+
+      
+
+      var movie1 = $("<div>", {id: "movie1-container" });
+      var movie2 = $("<div>", {id: "movie2-container" });
+      var movie3 = $("<div>", {id: "movie3-container" });
+      var movie4 = $("<div>", {id: "movie4-container" });
+      var movie5 = $("<div>", {id: "movie5-container" });
+      var movie6 = $("<div>", {id: "movie6-container" });
+      var movie7 = $("<div>", {id: "movie7-container" });
+      var movie8 = $("<div>", {id: "movie8-container" });
+
+      $("#search-results").append{
+        movie1,
+        movie2,
+        movie3,
+        movie4,
+        movie5,
+        movie6,
+        movie7,
+        movie8,
+      };
+
+    }
+  })
+}
+*/
+
+
+/*
+var searchhistory = JSON.parse(window.localStorage.getItem("searchHistory")) || [];
+
+if (SearchHistory.length > 0) {
+  getWeather(history[history.length - 1]);
+}
+
+for (var i = 0; i < history.length; i++) {
+  listCity(history[i]);
+}
+
+*/
