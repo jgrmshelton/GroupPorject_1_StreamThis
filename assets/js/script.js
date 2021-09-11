@@ -68,6 +68,9 @@ $("#search-button").on("click", function (event) {
 /*
       
 
+
+      
+
       var movie1 = $("<div>", {id: "movie1-container" });
       var movie2 = $("<div>", {id: "movie2-container" });
       var movie3 = $("<div>", {id: "movie3-container" });
@@ -92,6 +95,27 @@ $("#search-button").on("click", function (event) {
   })
 }
 */
+
+function movieArrayDivs() {
+  var movieTvArray = newMovieTvArray.length;
+
+  for(var i = 0; i < movieTvArray; i++) {
+    newMovieTvArray.toString();
+    var movieTvValues = newMovieTvArray[i];
+
+    var newDiv = document.createElement("div"); // creates a new div tag for each of values
+    newDiv.setAttribute("id", `Div${i}`);
+
+    var movieTvContent = document.createTextNode(movieTvValues); // add the value inside the array
+
+    newDiv.appendChild(movieTvContent);
+
+    var currentDiv = document.getElementById("#search-results");
+    document.body.insertBefore(newDiv, currentDiv);
+
+  }
+}
+
 
 /*
 var searchhistory = JSON.parse(window.localStorage.getItem("searchHistory")) || [];
