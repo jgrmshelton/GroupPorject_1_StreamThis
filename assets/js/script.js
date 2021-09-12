@@ -43,8 +43,11 @@ $("#search-button").on("click", function (event) {
         var currentDiv = document.getElementById("search-results");
         var movie = data.results[i];
         var movieTvValues = movie;
-        var newDiv = document.createElement("div"); // creates a new div tag for each of values
-        newDiv.setAttribute("id", `Div${i}`);
+
+        var card = document.createElement("div"); // creates a new div tag for each of values
+        card.setAttribute("id", `div${i}`);
+        card.setAttribute("class", "card");
+
         var title = document.createElement("h2");
         title.textContent = movie.title;
 
@@ -54,10 +57,11 @@ $("#search-button").on("click", function (event) {
         var about = document.createElement("p");
         about.textContent = movie.overview;
         
-        newDiv.append(title);
-        newDiv.append(year);
-        newDiv.append(about);
-        currentDiv.append(newDiv);
+        currentDiv.append(card);
+        card.append(title);
+        card.append(year);
+        card.append(about);
+        
         
       }
     }
