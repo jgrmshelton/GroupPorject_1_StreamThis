@@ -1,0 +1,16 @@
+/*When hovering over the search button it will move up*/
+button {
+    transition: transform 250ms, opacity 400ms;
+}
+
+button:hover {
+    transform: scale(1.2);
+}
+
+.container {
+    transition: transform 250ms, opacity 400ms;
+}
+
+.container:hover {
+    transform: scale(1.2);
+}
