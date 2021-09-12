@@ -1,7 +1,5 @@
-.card {
-    background-color: indigo;
-}
 
+#div0,
 #div1,
 #div2,
 #div3,
@@ -11,4 +9,22 @@
 #div7,
 #div8 {
     background-color: indigo;
+    margin: 1.5rem;
+}
+
+h2 {
+    font-size: x-large;
+    font-weight: bold;
+    color: white;
+    background-color: teal;
+}
+
+h3 {
+    font-size: large;
+    font-weight: bold;
+    color: yellow;
+}
+
+p {
+    color: white;
 }
