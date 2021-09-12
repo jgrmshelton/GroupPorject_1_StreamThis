@@ -7,10 +7,10 @@ button:hover {
     transform: scale(1.2);
 }
 
-.container {
+.p-2 {
     transition: transform 250ms, opacity 400ms;
 }
 
-.container:hover {
+.p-2:hover {
     transform: scale(1.2);
 }
