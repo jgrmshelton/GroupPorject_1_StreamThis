@@ -44,6 +44,9 @@ $("#search-button").on("click", function (event) {
         var movie = data.results[i];
         var movieTvValues = movie;
 
+        var container = document.createElement("div");
+        container.setAttribute("class", "card-container");
+
         var card = document.createElement("div"); // creates a new div tag for each of values
         card.setAttribute("id", `div${i}`);
         card.setAttribute("class", "card");
@@ -57,7 +60,8 @@ $("#search-button").on("click", function (event) {
         var about = document.createElement("p");
         about.textContent = movie.overview;
         
-        currentDiv.append(card);
+        currentDiv.append(container);
+        container.append(card);
         card.append(title);
         card.append(year);
         card.append(about);
