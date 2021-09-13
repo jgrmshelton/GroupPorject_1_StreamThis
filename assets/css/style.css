@@ -31,22 +31,43 @@ button:hover {
 }
 
 h2 {
-    font-size: x-large;
+    text-align: center;
+    font-size: xx-large;
     font-weight: bold;
     color: white;
     background-color: teal;
     padding: 4px;
+    padding-top: 1px;
+    padding-bottom: 1px;
 }
 
 h3 {
     font-size: large;
     font-weight: bold;
     padding: 10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
     color:purple;
+}
+
+h4 {
+    font-weight: bold;
+    padding: 10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
 }
 
 p {
     color: black;
     font-style:italic;
     padding: 10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.card-container {
+    display: flexbox;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
 }

@@ -45,11 +45,11 @@ $("#search-button").on("click", function (event) {
         var movieTvValues = movie;
 
         var container = document.createElement("div");
-        container.setAttribute("class", "card-container");
+        container.setAttribute("class", "card-container m-2");
 
         var card = document.createElement("div"); // creates a new div tag for each of values
         card.setAttribute("id", `div${i}`);
-        card.setAttribute("class", "card");
+        card.setAttribute("class", "card h-full");
 
         var title = document.createElement("h2");
         title.textContent = movie.title;
@@ -57,13 +57,18 @@ $("#search-button").on("click", function (event) {
         var year = document.createElement("h3");
         year.textContent = movie.year;
 
+        var cast = document.createElement("h4");
+        cast.textContent = movie.cast;
+
         var about = document.createElement("p");
+        about.setAttribute("class", "flex flex-1");
         about.textContent = movie.overview;
         
         currentDiv.append(container);
         container.append(card);
         card.append(title);
         card.append(year);
+        card.append(cast);
         card.append(about);
         
         
