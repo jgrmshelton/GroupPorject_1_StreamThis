@@ -1,3 +1,19 @@
+/*When hovering over the search button it will move up*/
+button {
+    transition: transform 250ms, opacity 400ms;
+}
+
+button:hover {
+    transform: scale(1.2);
+}
+
+.p-2 {
+    transition: transform 250ms, opacity 400ms;
+}
+
+.p-2:hover {
+    transform: scale(1.2);
+}
 
 #div0,
 #div1,
