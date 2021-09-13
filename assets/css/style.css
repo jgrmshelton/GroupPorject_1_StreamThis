@@ -24,7 +24,7 @@ button:hover {
 #div6,
 #div7,
 #div8 {
-    background-color: white;
+    border-radius: 8px;
     margin: 1.5rem;
     color: black;
 

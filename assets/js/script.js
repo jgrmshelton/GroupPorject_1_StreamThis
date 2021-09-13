@@ -45,24 +45,32 @@ $("#search-button").on("click", function (event) {
         var movieTvValues = movie;
 
         var container = document.createElement("div");
-        container.setAttribute("class", "card-container m-2");
+        container.setAttribute("class", "card-container p-2 m-2");
 
         var card = document.createElement("div"); // creates a new div tag for each of values
         card.setAttribute("id", `div${i}`);
-        card.setAttribute("class", "card h-full");
+        card.setAttribute("class", "card p-2 h-full bg-green-200");
 
         var title = document.createElement("h2");
+        title.setAttribute("class", "bg-gray-900 text-green-200 rounded-t-lg");
+        //card.setAttribute("class", "rounded-lg");
         title.textContent = movie.title;
 
         var year = document.createElement("h3");
+        year.setAttribute("class", "bg-gray-900 text-indigo-400");
         year.textContent = movie.year;
 
         var cast = document.createElement("h4");
+        cast.setAttribute("class", "bg-gray-900 text-white")
         cast.textContent = movie.cast;
 
         var about = document.createElement("p");
-        about.setAttribute("class", "flex flex-1");
+        about.setAttribute("class", "bg-gray-900 pb-4 h-auto text-indigo-400");
         about.textContent = movie.overview;
+
+        var rating = document.createElement("h4");
+        rating.setAttribute("class", "bg-gray-900 text-white rounded-b-lg ")
+        rating.textContent = ("IMDb Rating: " + movie.imdbRating);
         
         currentDiv.append(container);
         container.append(card);
@@ -70,7 +78,7 @@ $("#search-button").on("click", function (event) {
         card.append(year);
         card.append(cast);
         card.append(about);
-        
+        card.append(rating);
         
       }
     }
