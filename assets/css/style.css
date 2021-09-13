@@ -24,8 +24,10 @@ button:hover {
 #div6,
 #div7,
 #div8 {
-    background-color: indigo;
+    background-color: white;
     margin: 1.5rem;
+    color: black;
+
 }
 
 h2 {
@@ -33,14 +35,18 @@ h2 {
     font-weight: bold;
     color: white;
     background-color: teal;
+    padding: 4px;
 }
 
 h3 {
     font-size: large;
     font-weight: bold;
-    color: yellow;
+    padding: 10px;
+    color:purple;
 }
 
 p {
-    color: white;
+    color: black;
+    font-style:italic;
+    padding: 10px;
 }
