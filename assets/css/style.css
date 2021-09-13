@@ -7,11 +7,11 @@ button:hover {
     transform: scale(1.2);
 }
 
-.p-2 {
+#search-button {
     transition: transform 250ms, opacity 400ms;
 }
 
-.p-2:hover {
+#search-button:hover {
     transform: scale(1.2);
 }
 
