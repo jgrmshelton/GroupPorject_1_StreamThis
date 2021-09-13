@@ -2,8 +2,7 @@
 
 // Get document ready for jQuery
 
-$(document).ready(function() {
-  
+//$(document).ready(function () {
 /* when search button is clicked capture the values chosen
     $(search id).on(click, function() {
       prevent default;
@@ -12,65 +11,64 @@ $(document).ready(function() {
       name <- value.val();
     })
     */
-   $("#search-button").on("click", function() {
-     event.preventDefault();
-     // capture the values chosen from the drop downs
-     var streamingService = $("#str-ser-pick").val();
-     var tvOrMovie = $("#tv-movie-pick").val();
-     var genrePick = $("#genre-pick").val();
-     // clear drop down picks after search button is clicked
-     $("str-ser-pick").val("");
-     $("tv-movie-pick").val("");
-     $("genre-pick").val("");
-   })
-   /*
-   getAPIFunction(streamingService);
-   getAPIFunction(tvOrMovie);
-   getAPIFunction(genrePick);
-   */
-})
-
-/*
-function streamingAvailability() {
-  $.ajax ({
-    type: "GET",
-    url: "aksdalj.com + "  adsfad
-    dataType: "json"
-    success: function (data) {
-      if(varName.idexOf(streamingAvailability) === ?) {
-        searchHistory.push(streamingAvailability);
-        window.localStroage.setItem("searchHistory", JSON.stringigy(searchHistory))
-        listSearch(searchHistory);
-      }
-
-      ?
-
-      
-
-      var movie1 = $("<div>", {id: "movie1-container" });
-      var movie2 = $("<div>", {id: "movie2-container" });
-      var movie3 = $("<div>", {id: "movie3-container" });
-      var movie4 = $("<div>", {id: "movie4-container" });
-      var movie5 = $("<div>", {id: "movie5-container" });
-      var movie6 = $("<div>", {id: "movie6-container" });
-      var movie7 = $("<div>", {id: "movie7-container" });
-      var movie8 = $("<div>", {id: "movie8-container" });
-
-      $("#search-results").append{
-        movie1,
-        movie2,
-        movie3,
-        movie4,
-        movie5,
-        movie6,
-        movie7,
-        movie8,
-      };
-
+$("#search-button").on("click", function (event) {
+  event.preventDefault();
+  // capture the values chosen from the drop downs
+  var streamingService = $("#str-ser-pick").val();
+  var tvOrMovie = $("#tv-movie-pick").val();
+  var genrePick = $("#genre-pick").val();
+  fetch(
+    `https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=${streamingService}&type=movie&genre=${genrePick}&page=1&language=en`,
+    {
+      method: "GET",
+      headers: {
+        "x-rapidapi-host": "streaming-availability.p.rapidapi.com",
+        "x-rapidapi-key": "9d43d4c7e0mshf7e0dc5ea3d9f07p1853d5jsn9854726a74ae",
+      },
     }
-  })
-}
-*/
+  )
+    .then((response) => {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      movieArrayDivs(data);
+    });
+
+    function movieArrayDivs(data) {
+      
+    
+      for(var i = 0; i <= data.results.length - 1; i++) {
+        //movieTvArray.toString();
+        var currentDiv = document.getElementById("search-results");
+        var movie = data.results[i];
+        var movieTvValues = movie;
+
+        var card = document.createElement("div"); // creates a new div tag for each of values
+        card.setAttribute("id", `div${i}`);
+        card.setAttribute("class", "card");
+
+        var title = document.createElement("h2");
+        title.textContent = movie.title;
+
+        var year = document.createElement("h3");
+        year.textContent = movie.year;
+
+        var about = document.createElement("p");
+        about.textContent = movie.overview;
+        
+        currentDiv.append(card);
+        card.append(title);
+        card.append(year);
+        card.append(about);
+        
+        
+      }
+    }
+});
+
+
+
 
 
 /*
