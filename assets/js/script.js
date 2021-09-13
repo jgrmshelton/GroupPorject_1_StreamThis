@@ -23,7 +23,7 @@ $("#search-button").on("click", function (event) {
       method: "GET",
       headers: {
         "x-rapidapi-host": "streaming-availability.p.rapidapi.com",
-        "x-rapidapi-key": "9d43d4c7e0mshf7e0dc5ea3d9f07p1853d5jsn9854726a74ae",
+        "x-rapidapi-key": "4205557259msh0abc79479b06253p14ce78jsnfd53a2227e3e",
       },
     }
   )
@@ -45,14 +45,14 @@ $("#search-button").on("click", function (event) {
         var movieTvValues = movie;
 
         var container = document.createElement("div");
-        container.setAttribute("class", "card-container p-2 m-2");
+        container.setAttribute("class", "card-container p-2 m-0");
 
         var card = document.createElement("div"); // creates a new div tag for each of values
         card.setAttribute("id", `div${i}`);
-        card.setAttribute("class", "card p-2 h-full bg-green-200");
+        card.setAttribute("class", "card p-2 bg-green-200");
 
         var title = document.createElement("h2");
-        title.setAttribute("class", "bg-gray-900 text-green-200 rounded-t-lg");
+        title.setAttribute("class", "bg-gray-900 text-green-200 rounded-t-lg flex flex-wrap");
         //card.setAttribute("class", "rounded-lg");
         title.textContent = movie.title;
 
