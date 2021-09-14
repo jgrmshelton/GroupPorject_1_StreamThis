@@ -18,7 +18,7 @@ $("#search-button").on("click", function (event) {
   var tvOrMovie = $("#tv-movie-pick").val();
   var genrePick = $("#genre-pick").val();
   fetch(
-    `https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=${streamingService}&type=movie&genre=${genrePick}&page=1&language=en`,
+    `https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=${streamingService}&type=${tvOrMovie}&genre=${genrePick}&page=1&language=en`,
     {
       method: "GET",
       headers: {
