@@ -35,63 +35,63 @@ $("#search-button").on("click", function (event) {
       movieArrayDivs(data);
     });
 
-    function movieArrayDivs(data) {
-      
-    
-      for(var i = 0; i <= data.results.length - 1; i++) {
-        //movieTvArray.toString();
-        var currentDiv = document.getElementById("search-results");
-        var movie = data.results[i];
-        var movieTvValues = movie;
+  function movieArrayDivs(data) {
+    for (var i = 0; i <= data.results.length - 1; i++) {
+      //movieTvArray.toString();
+      var currentDiv = document.getElementById("search-results");
+      var movie = data.results[i];
+      var movieTvValues = movie;
+      var id = movie.imdbID;
+      var container = document.createElement("div");
+      container.setAttribute("class", "card-container p-2 m-0");
 
-        var container = document.createElement("div");
-        container.setAttribute("class", "card-container p-2 m-0");
+      var card = document.createElement("div"); // creates a new div tag for each of values
+      card.setAttribute("id", `div${i}`);
+      card.setAttribute("class", "card flex-1 p-2 rounded-lg bg-green-200");
 
-        var card = document.createElement("div"); // creates a new div tag for each of values
-        card.setAttribute("id", `div${i}`);
-        card.setAttribute("class", "card flex-1 p-2 rounded-lg bg-green-200");
+      var innerCard = document.createElement("div");
+      innerCard.setAttribute("id", "innerCard");
+      innerCard.setAttribute("class", "bg-gray-900 p-4 rounded-lg");
 
-        var innerCard = document.createElement("div");
-        innerCard.setAttribute("id", "innerCard");
-        innerCard.setAttribute("class", "bg-gray-900 p-4 rounded-lg");
+      var title = document.createElement("h2");
+      title.setAttribute("class", "text-white flex flex-wrap");
+      //card.setAttribute("class", "rounded-lg");
+      title.textContent = movie.title;
 
-        var title = document.createElement("h2");
-        title.setAttribute("class", "text-white flex flex-wrap");
-        //card.setAttribute("class", "rounded-lg");
-        title.textContent = movie.title;
+      var year = document.createElement("h3");
+      year.setAttribute("class", "text-indigo-400");
+      year.textContent = movie.year;
 
-        var year = document.createElement("h3");
-        year.setAttribute("class", "text-indigo-400");
-        year.textContent = movie.year;
+      var cast = document.createElement("h4");
+      cast.setAttribute("class", "text-white");
+      cast.textContent = movie.cast;
 
-        var cast = document.createElement("h4");
-        cast.setAttribute("class", "text-white")
-        cast.textContent = movie.cast;
+      var about = document.createElement("p");
+      about.setAttribute("class", "text-indigo-400");
+      about.textContent = movie.overview;
 
-        var about = document.createElement("p");
-        about.setAttribute("class", "text-indigo-400");
-        about.textContent = movie.overview;
+      var rating = document.createElement("h4");
+      rating.setAttribute("class", "text-white");
+      rating.textContent = "IMDb Rating: " + movie.imdbRating;
 
-        var rating = document.createElement("h4");
-        rating.setAttribute("class", "text-white")
-        rating.textContent = ("IMDb Rating: " + movie.imdbRating);
-        
-        currentDiv.append(container);
-        container.append(card);
-        card.append(innerCard);
-        innerCard.append(title);
-        innerCard.append(year);
-        innerCard.append(cast);
-        innerCard.append(about);
-        innerCard.append(rating);
-        
-      }
+      var poster = document.createElement("img");
+      poster.setAttribute(
+        "src",
+        `http://img.omdbapi.com/?i=${id}&apikey=52e1f5ec`
+      );
+
+      currentDiv.append(container);
+      container.append(card);
+      card.append(innerCard);
+      innerCard.append(title);
+      innerCard.append(year);
+      innerCard.append(poster);
+      innerCard.append(cast);
+      innerCard.append(about);
+      innerCard.append(rating);
     }
+  }
 });
-
-
-
-
 
 /*
 var searchhistory = JSON.parse(window.localStorage.getItem("searchHistory")) || [];
