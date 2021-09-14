@@ -63,6 +63,23 @@ p {
     padding-bottom: 1px;
 }
 
+.social-media {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 0;
+    padding: 0;
+
+}
+
+.social-media-logo {
+    margin: 0 .5rem;
+}
+
+.social-media-link {
+    padding: .5rem;
+}
+
 @media screen and (max-width: 1280px) {
     
 }
