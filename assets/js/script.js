@@ -17,6 +17,17 @@ $("#search-button").on("click", function (event) {
   var streamingService = $("#str-ser-pick").val();
   var tvOrMovie = $("#tv-movie-pick").val();
   var genrePick = $("#genre-pick").val();
+
+  //clear selection picks when search button is clicked
+  //$("#str-ser-pick").val("");
+ // $("#tv-movie-pick").val("");
+  //$("genre-pick").val("");
+
+  //clear search results container when another selection is made
+  $("select").click(function() {
+    $("#search-results").empty();
+  });
+
   fetch(
     `https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=${streamingService}&type=${tvOrMovie}&genre=${genrePick}&page=1&language=en`,
     {
