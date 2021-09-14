@@ -54,7 +54,7 @@ $("#search-button").on("click", function (event) {
       innerCard.setAttribute("class", "bg-gray-900 p-4 rounded-lg");
 
       var title = document.createElement("h2");
-      title.setAttribute("class", "text-white flex flex-wrap");
+      title.setAttribute("class", "text-white text-center flex flex-wrap");
       //card.setAttribute("class", "rounded-lg");
       title.textContent = movie.title;
 
@@ -79,6 +79,7 @@ $("#search-button").on("click", function (event) {
         "src",
         `http://img.omdbapi.com/?i=${id}&apikey=52e1f5ec`
       );
+      poster.setAttribute("class", "px-16 md:px-20");
 
       currentDiv.append(container);
       container.append(card);
