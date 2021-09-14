@@ -1,16 +1,19 @@
-/* -- Psuedocode -- */
+var openmodal = document.querySelectorAll('#contact-info')
+    for (var i = 0; i < openmodal.length; i++) {
+      openmodal[i].addEventListener('click', function(event){
+    	event.preventDefault()
+    	toggleModal()
+      })
+    }
+    
+    function toggleModal () {
+      const body = document.querySelector('body')
+      const modal = document.querySelector('.modal')
+      modal.classList.toggle('opacity-0')
+      modal.classList.toggle('pointer-events-none')
+      body.classList.toggle('modal-active')
+    }
 
-// Get document ready for jQuery
-
-//$(document).ready(function () {
-/* when search button is clicked capture the values chosen
-    $(search id).on(click, function() {
-      prevent default;
-      name <- value.val();
-      name <- value.val();
-      name <- value.val();
-    })
-    */
 $("#search-button").on("click", function (event) {
   event.preventDefault();
   // capture the values chosen from the drop downs
