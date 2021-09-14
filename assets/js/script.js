@@ -49,36 +49,41 @@ $("#search-button").on("click", function (event) {
 
         var card = document.createElement("div"); // creates a new div tag for each of values
         card.setAttribute("id", `div${i}`);
-        card.setAttribute("class", "card p-2 bg-green-200");
+        card.setAttribute("class", "card flex-1 p-2 rounded-lg bg-green-200");
+
+        var innerCard = document.createElement("div");
+        innerCard.setAttribute("id", "innerCard");
+        innerCard.setAttribute("class", "bg-gray-900 p-4 rounded-lg");
 
         var title = document.createElement("h2");
-        title.setAttribute("class", "bg-gray-900 text-green-200 rounded-t-lg flex flex-wrap");
+        title.setAttribute("class", "text-white flex flex-wrap");
         //card.setAttribute("class", "rounded-lg");
         title.textContent = movie.title;
 
         var year = document.createElement("h3");
-        year.setAttribute("class", "bg-gray-900 text-indigo-400");
+        year.setAttribute("class", "text-indigo-400");
         year.textContent = movie.year;
 
         var cast = document.createElement("h4");
-        cast.setAttribute("class", "bg-gray-900 text-white")
+        cast.setAttribute("class", "text-white")
         cast.textContent = movie.cast;
 
         var about = document.createElement("p");
-        about.setAttribute("class", "bg-gray-900 pb-4 h-auto text-indigo-400");
+        about.setAttribute("class", "text-indigo-400");
         about.textContent = movie.overview;
 
         var rating = document.createElement("h4");
-        rating.setAttribute("class", "bg-gray-900 text-white rounded-b-lg ")
+        rating.setAttribute("class", "text-white")
         rating.textContent = ("IMDb Rating: " + movie.imdbRating);
         
         currentDiv.append(container);
         container.append(card);
-        card.append(title);
-        card.append(year);
-        card.append(cast);
-        card.append(about);
-        card.append(rating);
+        card.append(innerCard);
+        innerCard.append(title);
+        innerCard.append(year);
+        innerCard.append(cast);
+        innerCard.append(about);
+        innerCard.append(rating);
         
       }
     }
