@@ -38,6 +38,12 @@ Stream This! is a website that allows users to choose a streaming service, movie
 
 ![Capture3](https://user-images.githubusercontent.com/87145391/133352553-d986cd7d-923a-4ae3-8fea-d843056aa95e.JPG)
 
+# Deployed Page
+https://jgrmshelton.github.io/GroupPorject_1_StreamThis/#
+
+# GitHub Repository
+https://github.com/jgrmshelton/GroupPorject_1_StreamThis
+
 # Contributors
 Julia Martinez-Shelton
 GitHub - jgrmshelton
