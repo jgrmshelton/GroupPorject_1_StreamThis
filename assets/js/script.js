@@ -1,18 +1,20 @@
-var openmodal = document.querySelectorAll('#contact-info')
-    for (var i = 0; i < openmodal.length; i++) {
-      openmodal[i].addEventListener('click', function(event){
-    	event.preventDefault()
-    	toggleModal()
-      })
-    }
-    
-    function toggleModal () {
-      const body = document.querySelector('body')
-      const modal = document.querySelector('.modal')
-      modal.classList.toggle('opacity-0')
-      modal.classList.toggle('pointer-events-none')
-      body.classList.toggle('modal-active')
-    }
+var hasSearched = false;
+
+var openmodal = document.querySelectorAll("#contact-info");
+for (var i = 0; i < openmodal.length; i++) {
+  openmodal[i].addEventListener("click", function (event) {
+    event.preventDefault();
+    toggleModal();
+  });
+}
+
+function toggleModal() {
+  const body = document.querySelector("body");
+  const modal = document.querySelector(".modal");
+  modal.classList.toggle("opacity-0");
+  modal.classList.toggle("pointer-events-none");
+  body.classList.toggle("modal-active");
+}
 
 $("#search-button").on("click", function (event) {
   event.preventDefault();
@@ -23,11 +25,11 @@ $("#search-button").on("click", function (event) {
 
   //clear selection picks when search button is clicked
   //$("#str-ser-pick").val("");
- // $("#tv-movie-pick").val("");
+  // $("#tv-movie-pick").val("");
   //$("genre-pick").val("");
 
   //clear search results container when another selection is made
-  $("select").click(function() {
+  $("select").click(function () {
     $("#search-results").empty();
   });
 
@@ -104,19 +106,30 @@ $("#search-button").on("click", function (event) {
       innerCard.append(cast);
       innerCard.append(about);
       innerCard.append(rating);
+      saveSearch();
     }
   }
 });
 
-/*
-var searchhistory = JSON.parse(window.localStorage.getItem("searchHistory")) || [];
-
-if (SearchHistory.length > 0) {
-  getWeather(history[history.length - 1]);
+function saveSearch() {
+  var streamingService = $("#str-ser-pick").val();
+  var tvOrMovie = $("#tv-movie-pick").val();
+  var genrePick = $("#genre-pick").val();
+  localStorage.setItem("genre", genrePick);
+  localStorage.setItem("type", tvOrMovie);
+  localStorage.setItem("service", streamingService);
+  hasSearched = true;
 }
 
-for (var i = 0; i < history.length; i++) {
-  listCity(history[i]);
+function loadSearch() {
+  if (localStorage.getItem("service")) {
+    $("#str-ser-pick").val(localStorage.getItem("service")).trigger("change");
+  }
+  if (localStorage.getItem("genre")) {
+    $("#genre-pick").val(localStorage.getItem("genre")).trigger("change");
+  }
+  if (localStorage.getItem("type")) {
+    $("#tv-movie-pick").val(localStorage.getItem("type")).trigger("change");
+  }
 }
-
-*/
+loadSearch();
